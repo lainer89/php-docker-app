@@ -1,9 +1,7 @@
-version: '3.8'
-
 services:
   app:
     build: .
-    container_name: php-app-master
+    container_name: php-app-final
     ports:
       - "8080:80"
     depends_on:
@@ -13,11 +11,12 @@ services:
 
   db:
     image: mariadb:10.6
-    container_name: mysql-db-master
+    container_name: mysql-db-final
     restart: always
     volumes:
       - db-data:/var/lib/mysql
-      - ./db.sql:/docker-entrypoint-initdb.d/db.sql
+      # La ruta correcta al script SQL
+      - ./sql/db.sql:/docker-entrypoint-initdb.d/db.sql
     env_file:
       - .env
 
