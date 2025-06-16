@@ -56,3 +56,17 @@ INSERT INTO `tweet` (`user_id`, `ts`, `message`) VALUES
   ('Darth_Vader', '2016-05-10 19:00:00', 'I\'ve been waiting for you, @Obi-Wan. We meet again, at last.'),
   ('Darth_Vader', '2016-06-06 23:00:00', 'Your powers are weak, old man.')
 ;
+CREATE DATABASE IF NOT EXISTS db;
+USE db;
+
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE IF NOT EXISTS users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL
+);
+
+INSERT INTO users (name) VALUES 
+('Lainer'),
+('Yonis'),
+('Beatriz');

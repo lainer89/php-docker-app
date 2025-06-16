@@ -24,14 +24,12 @@ $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     echo "<h2>Users:</h2><ul>";
-    while($row = $result->fetch_assoc()) {
+    while ($row = $result->fetch_assoc()) {
         echo "<li>ID: " . htmlspecialchars($row["id"]) . " - Name: " . htmlspecialchars($row["name"]) . "</li>";
     }
     echo "</ul>";
 } else {
-    echo "No users found in the database.";
+    echo "<p>No users found.</p>";
 }
 
-$stmt->close();
 $conn->close();
-?>
